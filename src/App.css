@@ -1,38 +1,194 @@
-.App {
+body{
+  font-family: verdana;
+  /* background: linear-gradient(90deg,#FF6F91,#FF9671,#FFC75F); */
+  /* background: linear-gradient(90deg, #1684ff, #5ed5ab) */
+  /* background: linear-gradient(90deg,#f782c2 10%,#d527b7 50%,#e3e3e3 100%); */
+  background: linear-gradient(90deg, #e3e3e3, #f782c2,#d527b7);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container img {
+  height:100px;
+  width:100px;
+  border-radius: 50%;
+}
+
+.main{
+  display: grid;
+  grid-template-columns: repeat(3,300px);
+  align-items: center;
+  justify-content: center;
+  grid-gap: 40px;
+  margin:30px;
+  overflow: auto;
+}
+
+.gContainer {
+  height:300px;
+  width:200px;
+  display:flex;
+  flex-wrap: wrap;
+  align-items:center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin:10px;
+  padding:30px;
+  background: rgba(255, 255, 255, 0.26);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.51);
+  transition: all 0.3s linear;
+  display:inline-table;
+}
+
+::selection{
+  background-color: pink;
+}
+
+.gContainer:hover {
+  transform: scale(1.02);
+  border: 2px solid blue;
+}
+
+.gContainer:active {
+  transform: scale(0.99);
+}
+
+.desc{
+  font-family: dosis;
+}
+
+.gContainer h3 {
+  word-wrap: break-word;
+  word-break: break-all;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn {
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Icontain {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top:30px;
 }
 
-.App-link {
-  color: #61dafb;
+.wrapper{
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.input {
+  width: 250px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px #323232 solid;
+  padding: 5px 15px;
+  background: rgba(255, 255, 255, 0.26);
+  font-size: 15;
+  font-weight: 500;
+  transition: all 0.3s linear;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.placeholder {
+  width: 65%;
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-align: center;
+  color: #4b49af;
+  background-color:white;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  transition: all 0.3s linear;
+  opacity: 0;
+}
+.input::placeholder {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.input:focus + .placeholder {
+  opacity: 1;
+}
+
+.input:focus {
+  outline: 2px solid #4b49af;
+  border: none;
+  color: #000;
+  border-radius: 50px;
+}
+
+.input:focus::placeholder {
+  opacity: 0;
+}
+
+.link{
+  text-decoration: none;
+  outline: none;
+  text-align: center;
+  margin:0 auto;
+  padding: 14px 35px;
+  border-radius: 10px;
+  border: 0;
+  background-color: rgb(255, 56, 86);
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all .3s ease;
+  box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+  color: hsl(0, 0%, 100%);
+  font-family: verdana;
+  font-size: 16px;
+ }
+ 
+ .link:hover{
+   box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+ }
+ .link:active{
+  background-color: rgb(255, 56, 86);
+ box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+ transform: translateY(5px);
+ transition: 200ms;
+}
+
+/* @media (min-width:1025px) and (max-width:1200px) {
+  .main{
+    grid-template-columns: repeat(4,300px);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (min-width: 769px) and(max-width:1024px) {
+  .main{
+    grid-template-columns: repeat(3, 300px);
+  }
+} */
+
+@media (min-width: 481px) and (max-width:768px) {
+  .main {
+    grid-template-columns: repeat(2,300px);
+  }
+}
+
+@media(min-width: 320px) and (max-width:480px) {
+  .main{
+    grid-template-columns: 300px;
   }
 }
