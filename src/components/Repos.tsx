@@ -1,4 +1,4 @@
-import React,{ChangeEvent,KeyboardEvent, FC, useEffect, useState} from 'react'
+import React,{ChangeEvent,KeyboardEvent, FC, useState} from 'react'
 import { IDetails,IRepos } from './interfaces';
 import '../App.css';
 
